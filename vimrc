@@ -13,7 +13,7 @@ set nocompatible
 "syntax on
 "colorscheme ron
 "colorscheme evening
-colorscheme murphy
+colorscheme Wrancolor
 "colorscheme desert
 "colorscheme slate
 "colorscheme torte
@@ -21,6 +21,7 @@ colorscheme murphy
 "colorscheme koehler
 "colorscheme morning
 "colorscheme anotherdark
+
 "显示行号
 set nu
 "为了方便复制，用<F2>开启/关闭行号显示
@@ -113,37 +114,4 @@ autocmd FileType bash setlocal foldmethod=indent
 set foldlevel=99
 "空格键作为快捷键
 nnoremap <space> za
-
-"================================================
-"                 垂直线
-"=================================================
-map <F9>:call SetColorColunm()<CR>
-function! SetColorColumn()
-    let col_num = 80
-    let cc_list = split(&cc,',')
-    if count (cc_list, string(col_num)) <= 0
-        execute "set cc +=".col_num
-    else
-        execute "set cc -=".col_num
-    endif
-endfunction
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
