@@ -25,6 +25,8 @@ hi Error		term=reverse   ctermbg=blue	  ctermfg=White guibg=Red  guifg=White
 hi Todo			term=standout  ctermbg=Yellow ctermfg=Black guifg=Blue guibg=Yellow
 " From the source:
 hi Cursor										  guifg=Orchid	guibg=fg
+"hi CursorLine guibg=lightblue guifg=red  ctermbg=dark ctermfg=black
+hi CursorColumn guibg=lightblue ctermbg=blue  guifg=white  ctermfg=white 
 hi Directory	term=bold	   ctermfg=LightCyan  guifg=Cyan
 hi ErrorMsg		term=standout  ctermbg=DarkRed	  ctermfg=White guibg=Red guifg=White
 hi IncSearch	term=reverse   cterm=reverse	  gui=reverse

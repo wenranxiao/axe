@@ -7,20 +7,11 @@
 "           工欲善其事必先利其器
 "================================================
 
+
 "关闭vi兼容模式
 set nocompatible
-"自动语法高亮
-"syntax on
-"colorscheme ron
-"colorscheme evening
+"颜色配方
 colorscheme Wrancolor
-"colorscheme desert
-"colorscheme slate
-"colorscheme torte
-"colorscheme delek
-"colorscheme koehler
-"colorscheme morning
-"colorscheme anotherdark
 
 "显示行号
 set nu
@@ -114,4 +105,18 @@ autocmd FileType bash setlocal foldmethod=indent
 set foldlevel=99
 "空格键作为快捷键
 nnoremap <space> za
+
+"================================================
+"                插件管理
+"================================================
+call pathogen#infect()
+imap jj <esc>
+
+
+
+
+
+
+
+
 
