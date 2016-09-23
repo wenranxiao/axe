@@ -115,9 +115,11 @@ imap jj <esc>
 "                 导入gdb
 "===============================================
 "gdb
-
-
-
+"===============================================
+"               高亮空白符
+"==============================================
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
 
 
 
