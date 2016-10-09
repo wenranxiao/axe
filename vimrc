@@ -120,6 +120,19 @@ imap jj <esc>
 "==============================================
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
+"==============================================
+"                垂直线
+"=============================================
+map <F9>:call SetColorColumn() <CR>
+function! SetColorColumn()
+    let col_num = 80
+    let cc_list = split(&cc,',')
+    if count (cc_list,string(col_num)) <= 0
+        execute "set cc +=".col_num
+    else
+        execute "set cc -=".col_num
+    endif
+endfunction
 
 
 

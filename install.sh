@@ -12,7 +12,7 @@ echo "Red Hat"
 if_red_hat=1
 fi
 
-ln -s ~/.vim/vimrc ~/.vimrc 
+ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/.gitignore ~/.gitignore
 
 git config --global user.name "Wran"
