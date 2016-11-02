@@ -11,8 +11,10 @@
 "关闭vi兼容模式
 set nocompatible
 "颜色配方
-colorscheme Wrancolor
-
+"colorscheme Wrancolor
+"colorscheme anotherdark
+"colorscheme darkburn
+colorscheme asmanian2
 "显示行号
 set nu
 "为了方便复制，用<F2>开启/关闭行号显示
@@ -22,7 +24,8 @@ set tabstop=4
 "突出显示当前行
 set cursorline
 "显示垂直线
-set cursorcolumn 
+set cursorcolumn
+hi cursorcolumn ctermfg=lightblue   guifg=white ctermfg=white
 "在状态栏上显示正在输入的命令
 set showcmd
 "打开状态栏标尺
@@ -106,24 +109,25 @@ set foldlevel=99
 "空格键作为快捷键
 nnoremap <space> za
 
-"================================================
-"                插件管理
-"================================================
+"插件管理
 call pathogen#infect()
 imap jj <esc>
-"===============================================
-"                 导入gdb
-"===============================================
-"gdb
-"===============================================
-"               高亮空白符
-"==============================================
+"导入gdb
+map <F6> :call AddTitle()<cr>'s
+function AddTitle()
+    let lnum = line(".")
+    let indt = indent(lnum)
+    let space = ""
+    for i in range(indt)
+        let space .= " "
+    endfor
+    call append(lnum, space . "import pdb; pdb.set_trace()")
+endf
+"高亮空白符
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
-"==============================================
-"                垂直线
-"=============================================
-map <F9>:call SetColorColumn() <CR>
+"垂直线
+map <F9> :call SetColorColumn()<CR>
 function! SetColorColumn()
     let col_num = 80
     let cc_list = split(&cc,',')
@@ -133,7 +137,13 @@ function! SetColorColumn()
         execute "set cc -=".col_num
     endif
 endfunction
+"NERDTree
+map <silent> <C-t> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info', '\.egg$', '\.pyo']
 
+"Tagbar
+nmap <F5> :TagbarToggle<CR>
+let tagbar_width = 30
 
 
 
