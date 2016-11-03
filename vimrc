@@ -15,6 +15,8 @@ set nocompatible
 "colorscheme anotherdark
 "colorscheme darkburn
 colorscheme asmanian2
+map b <c-b>
+map f <c-f>
 "显示行号
 set nu
 "为了方便复制，用<F2>开启/关闭行号显示
@@ -24,8 +26,7 @@ set tabstop=4
 "突出显示当前行
 set cursorline
 "显示垂直线
-set cursorcolumn
-hi cursorcolumn ctermfg=lightblue   guifg=white ctermfg=white
+nnoremap <F4> :set cursorcolumn!<CR>
 "在状态栏上显示正在输入的命令
 set showcmd
 "打开状态栏标尺
@@ -69,16 +70,12 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 
-"================================================
 "   保证vim在reopen一个文件的时候定位到同一行
-"=================================================
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-"================================================
 "       自动检测文件的类型并加载相应的位置
-"=================================================
 
 syntax on
 filetype plugin indent on
@@ -93,9 +90,7 @@ autocmd FileType bash setlocal et sta sw=4 sts=4
 
 
 
-"================================================
 "                代码折叠
-"=================================================
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType java setlocal foldmethod=indent
 autocmd FileType php setlocal foldmethod=indent
@@ -138,13 +133,53 @@ function! SetColorColumn()
     endif
 endfunction
 "NERDTree
-map <silent> <C-t> :NERDTreeToggle<CR>
+"map <silent> <C-t> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.egg-info', '\.egg$', '\.pyo']
+let NERDTreeWinSize=20
+
 
 "Tagbar
 nmap <F5> :TagbarToggle<CR>
 let tagbar_width = 30
 
+set tags=tags;/
 
+" ====== 代码检查 ======
+"
+" 禁止PyFlakes使用QuickFix，这样在按下<F7>时会调用flake8，而有对于代码编辑时的错误仍能得到有效的提示           
+let g:pyflakes_use_quickfix = 0
+"如有需要，可设置忽略部分错误
+" let g:flake8_ignore="W801,W802,H405,H904"
+let g:flake8_ignore="W801,W802"
+" Python文件使用Flake8，当:w保存时，会自动进行检查
+" autocmd BufWritePost *.py call Flake8()
+" For html and javascript
+let g:SimpleJsIndenter_BriefMode = 1
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+let g:html_indent_inctags = "html,body,head,tbody"
+" 回车即选中当前项
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+
+" 上下左右键的行为
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+" ===== plantuml =====
+let g:plantuml_executable_script='java -jar ~/.vim/bundle/plantuml-syntax/plantuml.'
+
+" ====== CommandT =====
+" 快捷键F打开CommandTmap
+map F :CommandT<CR>
+let g:CommandTMaxHeight=20
+let g:CommandTWildIgnore=&wildignore . ",**/*.egg-info/**,*.pyc,*.pyo,**/*.egg*/**"
+"set wildignore+=*.o,*.obj,.git,*.pyc,*pyo,**/*.egg-info/**,**/*.egg*/**
+let g:CommandTCancelMap='<Esc>'
+
+" ======vim-markdown=====
+let g:vim_markdown_folding_disabled=1
 
 
