@@ -2,12 +2,14 @@
 
 cat /proc/version | grep "Ubuntu"
 if [ $? -eq 0 ]; then
+apt-get install -y ctags
 echo "Ubuntu"
 is_red_hat=0
 fi
 
 cat /proc/version | grep "Red Hat"
 if [ $? -eq 0 ]; then
+yum install -y ctags
 echo "Red Hat"
 if_red_hat=1
 fi
