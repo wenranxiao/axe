@@ -151,7 +151,7 @@ set tags=tags;/
 let g:pyflakes_use_quickfix = 0
 "如有需要，可设置忽略部分错误
 " let g:flake8_ignore="W801,W802,H405,H904"
-let g:flake8_ignore="W801,W802"
+let g:flake8_ignore="W801,W802,D100,D101,D102,D103,D104"
 " Python文件使用Flake8，当:w保存时，会自动进行检查
 " autocmd BufWritePost *.py call Flake8()
 " For html and javascript
