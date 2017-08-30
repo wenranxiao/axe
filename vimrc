@@ -179,7 +179,8 @@ let g:CommandTWildIgnore=&wildignore . ",**/*.egg-info/**,*.pyc,*.pyo,**/*.egg*/
 "set wildignore+=*.o,*.obj,.git,*.pyc,*pyo,**/*.egg-info/**,**/*.egg*/**
 let g:CommandTCancelMap='<Esc>'
 
-" ======vim-markdown=====
-let g:vim_markdown_folding_disabled=1
-
-
+" ======vim-markdown=====et g:vim_markdown_folding_disabled=1
+" ======jedi-vim=====
+let mapleader=";"
+noremap H ^
+noremap L $
