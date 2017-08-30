@@ -8,4 +8,4 @@ For python.
 - F8 flake8检查
 - F9 80 垂直线
 - F10 进入paste模式
-- leader <space>
+- leader space键

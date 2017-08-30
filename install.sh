@@ -17,7 +17,7 @@ fi
 ln -s ~/axe/vimrc ~/.vimrc
 ln -s ~/axe/.gitignore ~/.gitignore
 
-git config --global user.name "Wran"
+git config --global user.name "wenran"
 git config --global user.email "xiaowenran@unitedstack.com"
 git config --global core.excludesfile $HOME/.gitignore
 git config --global color.ui true
