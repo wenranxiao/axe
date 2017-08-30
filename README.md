@@ -1,4 +1,5 @@
 #.vim
+For python.
 - F2 开启/关闭行号显示
 - F3 NERDTree
 - F4 开始/关闭垂直线
@@ -7,3 +8,4 @@
 - F8 flake8检查
 - F9 80 垂直线
 - F10 进入paste模式
+- leader <space>

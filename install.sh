@@ -14,8 +14,8 @@ echo "Red Hat"
 if_red_hat=1
 fi
 
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/.gitignore ~/.gitignore
+ln -s ~/axe/vimrc ~/.vimrc
+ln -s ~/axe/.gitignore ~/.gitignore
 
 git config --global user.name "Wran"
 git config --global user.email "xiaowenran@unitedstack.com"
