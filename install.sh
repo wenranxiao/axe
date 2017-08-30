@@ -1,21 +1,28 @@
 #!/bin/bash
 
 cat /proc/version | grep "Ubuntu"
-if [ $? -eq 0 ]; then
-apt-get install -y ctags
+if [ $? -eq 0 ]
+then
 echo "Ubuntu"
-is_red_hat=0
+is_ubuntu=1
 fi
 
 cat /proc/version | grep "Red Hat"
-if [ $? -eq 0 ]; then
-yum install -y ctags
+if [ $? -eq 0 ]
+then
 echo "Red Hat"
-if_red_hat=1
+is_red_hat=1
+fi
+cp -r ~/axe/*  ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/.gitignore ~/.gitignore
+
+if [ $is_red_hat = 1 ]; then
+    yum install ctags -y
+elif [ $is_ubuntu = 1 ]; then
+    apt-get install ctags -y
 fi
 
-ln -s ~/axe/vimrc ~/.vimrc
-ln -s ~/axe/.gitignore ~/.gitignore
 
 git config --global user.name "wenran"
 git config --global user.email "xiaowenran@unitedstack.com"
