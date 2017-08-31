@@ -16,6 +16,7 @@ set nocompatible
 "colorscheme darkburn
 colorscheme asmanian2
 map b <c-b>
+map f <c-f>
 "显示行号
 set nu
 "为了方便复制，用<F2>开启/关闭行号显示
