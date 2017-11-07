@@ -24,7 +24,7 @@ elif [ $is_ubuntu = 1 ]; then
 fi
 
 
-git config --global user.name "wenran"
+git config --global user.name "Wenran Xiao"
 git config --global user.email "xiaowenran@unitedstack.com"
 git config --global core.excludesfile $HOME/.gitignore
 git config --global color.ui true
