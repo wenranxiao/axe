@@ -9,3 +9,6 @@ For python.
 - F9 80 垂直线
 - F10 进入paste模式
 - leader space键
+
+# install
+- pip install jedi
