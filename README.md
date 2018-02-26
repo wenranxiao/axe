@@ -12,3 +12,4 @@ For python.
 
 # install
 - pip install jedi
+git clone https://github.com/davidhalter/jedi-vim.git
