@@ -17,6 +17,8 @@ cp -r ~/axe/*  ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/.gitignore ~/.gitignore
 
+cp ~/.vim/tmux.conf  ~/.tmux.conf
+
 if [ $is_red_hat = 1 ]; then
     yum install ctags -y
 elif [ $is_ubuntu = 1 ]; then
