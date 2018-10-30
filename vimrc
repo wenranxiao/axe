@@ -104,6 +104,9 @@ set foldlevel=99
 "插件管理
 call pathogen#infect()
 imap jj <esc>
+imap kk <esc>
+imap hh <esc>
+imap ll <esc>
 "导入gdb
 map <F6> :call AddTitle()<cr>'s
 function AddTitle()
