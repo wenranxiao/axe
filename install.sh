@@ -17,7 +17,7 @@ cp -r ~/axe/*  ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/.gitignore ~/.gitignore
 
-#cp ~/.vim/tmux.conf  ~/.tmux.conf
+cp ~/.vim/tmux.conf  ~/.tmux.conf
 
 if [ $is_red_hat = 1 ]; then
     yum install ctags -y
@@ -27,7 +27,9 @@ fi
 
 
 git config --global user.name "Wenran Xiao"
-git config --global user.email "xiaowr1@lenovo.com"
+#git config --global user.email "xiaowr1@lenovo.com"
+git config --global user.email "wenranxiao@gmail.com"
+#git config --global user.email "xiaowenran@kingsoft.com"
 git config --global core.excludesfile $HOME/.gitignore
 git config --global color.ui true
 git config --global alias.co checkout
